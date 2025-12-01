@@ -11,3 +11,12 @@ git add .
 git push -u origin main  = {only first time}
 
 git push - {further}
+
+
+
+
+2nd time
+1.git status
+2.git add
+3.git commit
+4.git push
