@@ -6,6 +6,6 @@ git add .
 
  git remote add origin https://github.com/BhavyashreeHM/Golang.git
 
-git push -u origin main
+ git commit -m "Added"
 
-Bhavyashree
+git push -u origin main
