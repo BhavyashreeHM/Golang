@@ -2,5 +2,10 @@ git congif --global --list
 
 git status
 
-git add
+git add .
 
+ git remote add origin https://github.com/BhavyashreeHM/Golang.git
+
+git push -u origin main
+
+Bhavyashree
