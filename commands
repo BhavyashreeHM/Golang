@@ -8,4 +8,6 @@ git add .
 
  git commit -m "Added"
 
-git push -u origin main
+git push -u origin main  = {only first time}
+
+git push - {further}
