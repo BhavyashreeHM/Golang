@@ -1,0 +1,11 @@
+// package main
+
+// func Variable() {
+// 	intV()
+// 	stringV()
+// 	floatV()
+// 	boolV()
+// 	constV()
+// 	complexV()
+// }
+// // 
