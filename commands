@@ -4,9 +4,9 @@ git status
 
 git add .
 
- git remote add origin https://github.com/BhavyashreeHM/Golang.git
+git remote add origin https://github.com/BhavyashreeHM/Golang.git
 
- git commit -m "Added"
+git commit -m "Added"
 
 git push -u origin main  = {only first time}
 
@@ -19,4 +19,6 @@ git push - {further}
 1.git status
 2.git add
 3.git commit
-4.git push
+4.git push 
+
+git init
