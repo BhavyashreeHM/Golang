@@ -1,0 +1,18 @@
+package main
+
+func main(){
+    client := &http.Client{}
+
+    resp, err := http.Get("https://jsonplaceholder/typicode/posts/1")
+    if err != nil{
+        fmt.Println("Error while listening")
+    }
+    defer resp.Body.Close()
+
+    req, err := io.ReadAll(resp.Body)
+    if err != nil{
+        fmt.Println("Error while processing")
+    }
+
+    fmt.Println(string(req))
+}

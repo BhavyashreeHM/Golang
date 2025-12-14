@@ -1,0 +1,31 @@
+package main
+
+import (
+	"fmt"
+	"io"
+	"net/http"
+)
+
+func main() {
+	// r := http.NewServeMux()
+
+	// r.HandleFunc("/hello", func(w http.ResponseWriter, r *http.Request) {
+	// 	w.Write([]byte("Hello, World!"))
+	// })
+
+	// http.ListenAndServe(":8080", r)
+
+	client := &http.Client{}
+	resp, err := client.Get("https://jsonplaceholder.typicode.com/posts")
+	if err != nil {
+		panic(err)
+	}
+	 
+	defer resp.Body.Close()
+	body, err := io.ReadAll(resp.Body)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(string(body))
+
+}
