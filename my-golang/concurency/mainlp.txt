@@ -1,0 +1,36 @@
+package main
+
+import "fmt"
+
+func channel() {
+	ch := make(chan string)
+	links := []string{
+		"www.github.com",
+		"www.go.dec",
+		"www.docker.com",
+	}
+	go func() {
+		for _, link := range links {
+			ch <-link
+		}
+		close(ch)
+	}()
+
+	link1:= <-ch
+	link2:= <-ch
+	link3 := <-ch
+
+	fmt.Println(link1)
+	fmt.Println(link2)
+	fmt.Println(link3)
+
+	Number(5)
+}
+
+func Number(n int){
+	for i:= range n{
+		fmt.Println(i)
+	}
+}
+
+

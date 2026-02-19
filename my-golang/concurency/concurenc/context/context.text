@@ -1,0 +1,61 @@
+package main
+
+import (
+	"context"
+	"fmt"
+	"time"
+)
+
+func main() {
+	// todoContext := context.TODO()
+	// doSomething(todoContext)
+	// fmt.Println("\n")
+
+	bkgContext := context.Background()
+	ctx := context.WithValue(bkgContext, "Id", "20")
+	// doSomething(bkgContext)
+	doSomething(ctx)
+
+	ctx = context.WithValue(context.Background(),"msg","Good Nigh")
+	fmt.Printf("conex msg is %s",ctx.Value("msg"))
+
+}
+
+func doSomething(ctx context.Context) {
+	fmt.Printf("My context Id is %s\n", ctx.Value("Id"))
+	anotherctx := context.WithValue(ctx, "msg", "good night")
+	Newctx(anotherctx)
+
+}
+func Newctx(ctx context.Context) {
+	fmt.Printf("Conex received from dosomehing conex %s \n", ctx.Value("msg"))
+	cancelContex(ctx)
+
+}
+
+// The context.WithCancel function creates a new context with a cancellation function.
+//
+//	It's useful when you want to manually cancel a context.
+func cancelContex(ctx context.Context) {
+	ctx, cancel := context.WithCancel(ctx)
+	fmt.Println("Im from cancel Conex ")
+	defer cancel()
+	ConexwihDeadline(ctx)
+}
+
+//  {}  :=  t y  
+func ConexwihDeadline(ctx context.Context){
+	deadline :=time.Now().Add(5 * time.Second)
+	ctx, cancel := context.WithDeadline(ctx, deadline)
+	fmt.Println("Im from cancel ConexwihDeadline ")
+	defer cancel()
+	ConexwihTimeou(ctx)
+}
+
+func ConexwihTimeou(ctx context.Context){
+	// deadline :=time.Now().Add(5 * time.Second)
+	// ctx, cancel := context.WithTimeout(ctx,deadline)
+	fmt.Println("Im from cancel ConexwihDeadline ")
+	// defer cancel()
+}
+

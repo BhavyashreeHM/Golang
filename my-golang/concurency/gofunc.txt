@@ -1,0 +1,14 @@
+package concurency
+
+import (
+	"fmt"
+)
+
+func gofunc() {
+
+	getMod := func(a, b int) int { // declare it
+		return a % b
+	}
+
+	fmt.Println(getMod(12, 5)) // prints 2
+}

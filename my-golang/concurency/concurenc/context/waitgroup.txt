@@ -1,0 +1,19 @@
+https://www.geeksforgeeks.org/go-language/using-waitgroup-in-golang/
+
+The problem is that, our executors executes in bit amount of time so we unnecessarily  blocking the program for 1 sec.
+ In this example it doesn't seems to be a critical problem but if you making a production grade server
+  who is going to serve 1000's of request concurrently this will be a big problem.
+
+2. Let's use another Golang's standard library primitive "sync.WaitGroup".
+ WaitGroup is actually a type of counter which blocks the execution of function 
+ (or might say A goroutine) until its internal counter become 0.
+
+How It Works ?
+WaitGroup exports 3 methods.
+
+1	Add(int)	 It increases WaitGroup counter by given integer value.
+2	Done()	 It decreases WaitGroup counter by 1, we will use it to indicate termination of a goroutine.
+3	Wait()	It Blocks the execution until it's internal counter becomes 0.
+Note: WaitGroup is concurrency safe, so its safe to pass pointer to it as argument for Groutines.
+
+common practice in writing concurrent code in Golang.

@@ -1,0 +1,16 @@
+An unbuffered channel is created without any capacity specification. 
+These channels facilitate synchronous communication between goroutines; 
+a send operation on an unbuffered channel blocks until another goroutine reads from it, and vice-versa.
+
+Use Unbuffered Channels for strict synchronization scenarios where the timing of senders and receivers must be coordinated.
+
+If you are creating an application where operations must be confirmed before proceeding with others (such as handling financial transactions), unbuffered channels might be desirable for their blocking behavior.
+
+
+
+
+A buffered channel has a capacity that determines how many values it can hold before it starts blocking. 
+This allows for asynchronous communications as it doesn't require both sending and receiving operations to wait for each other.
+
+Use Buffered Channels to allow senders to progress without blocking when receivers are potentially not ready.
+Conversely, if you are dealing with data streaming from multiple sources where delays are intolerable, buffered channels can help smooth variations in handling time by letting senders keep sending values.

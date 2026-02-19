@@ -1,0 +1,25 @@
+package main
+
+import "fmt"
+
+func main() {
+	ch := make(chan int)
+	go add(ch, 1, 2)
+	result := <-ch
+	// fmt.Println("Sum:", result)
+	// divide(result)
+	fmt.Println("Result:", result)
+	divide(result)
+
+}
+func add(ch chan int, x int, y int) {
+
+	ch <- x + y
+
+}
+
+func divide(n int) int {
+	product := n / 2
+	return product
+
+}

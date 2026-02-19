@@ -1,0 +1,14 @@
+package main
+
+func main() {
+	c:= make(chan string)
+	go Greeting("Bhavya", c)
+	msg := <- c
+	println(msg)
+
+}
+func Greeting(message string, c chan string){
+	message = "Hello, " + message
+	c <- message
+
+}

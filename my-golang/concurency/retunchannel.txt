@@ -1,0 +1,32 @@
+package main
+
+import "fmt"
+
+func CountNUmber(n int) (<-chan int, func()) {
+	ch := make(chan int)
+	done := make(chan struct{})
+	cancel := func(){
+		close(done)
+	}
+	go func() {
+		for i := 0; i < n; i++ {
+
+			ch <- i
+
+		}
+		close(ch)
+	}()
+	return ch,cancel
+}
+
+func main() {
+	ch, cancel := CountNUmber(10)
+	for i := range ch {
+		if i>5 {
+			break
+		}
+		fmt.Println(i)
+	}
+
+	cancel()
+}

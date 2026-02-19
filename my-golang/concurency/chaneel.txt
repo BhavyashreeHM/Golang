@@ -1,0 +1,26 @@
+package main
+
+import "time"
+
+func main() {
+	ch := make(chan int)
+
+	go a(ch)
+	go b(ch)
+	time.Sleep(time.Millisecond *1)
+
+}
+func a(ch chan int) {
+	for i := 0; i < 10; i++ {
+		ch <- i
+
+	}
+	close(ch)
+}
+func b(ch chan int) {
+
+	for v := range ch {
+		print(v, " ")
+	}
+	
+}

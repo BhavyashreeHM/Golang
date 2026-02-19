@@ -1,0 +1,2 @@
+“Context in Go is used to control request lifecycle —
+it helps cancel goroutines, enforce timeouts, and pass request-scoped metadata.”

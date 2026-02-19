@@ -1,0 +1,26 @@
+package main
+
+import (
+	"fmt"
+	"sync"
+)
+
+func main() {
+	var numbers = []int{10, 20, 30, 40, 50, 60}
+	var wg sync.WaitGroup
+	for num := range numbers {
+		wg.Add(1)
+		go calci(num, &wg)
+
+	}
+	wg.Wait()
+
+}
+func calci(x int, wg *sync.WaitGroup) {
+	defer wg.Done()
+	sum := 0
+	for i := range x {
+		sum += i
+	}
+	fmt.Println("The summation of numbers", sum)
+}

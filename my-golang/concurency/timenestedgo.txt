@@ -1,0 +1,21 @@
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+
+	go nestedGo(3)
+	time.Sleep(time.Millisecond * 100)
+}
+func nestedGo(m int) {
+	for i := 0; i < m; i++ {
+		go g(i)
+	}
+}
+func g(n int) {
+	fmt.Println(n*2, n*n)
+
+}

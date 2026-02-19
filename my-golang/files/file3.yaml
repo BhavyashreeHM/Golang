@@ -1,0 +1,36 @@
+name : Bhvyashree
+age : 24
+skills :
+  - Go
+  - Python
+  - JavaScript
+experience : 2 years
+education : Bachelor's in Computer Science
+projects :
+  - name : Pizza Rating App
+    description : A simple app to rate pizzas using Go.
+    technologies : [Go, HTML, CSS]
+  - name : Task Manager
+    description : A web application to manage daily tasks.
+    technologies : [Go, React, MongoDB]
+  - name : Chat Application
+    description : A real-time chat application.
+    technologies : [Go, WebSockets, Node.js]
+certifications :
+  - name : Go Programming Language Certification
+    issuer : Go Institute
+    date : 2023-05-01
+  - name : Full Stack Web Development
+    issuer : Coursera
+    date : 2022-11-15
+  - name : Data Structures and Algorithms
+    issuer : Udemy
+    date : 2021-08-20 
+languages :
+  - English
+  - Hindi
+  - Spanish 
+interests :
+  - Cooking
+  - Traveling
+  - Music 

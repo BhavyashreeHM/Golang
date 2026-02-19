@@ -1,0 +1,23 @@
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func PrintMessage(msg string) {
+	println(msg)
+}
+
+func main() {
+	for i := 0; i < 5; i++ {
+		PrintMessage("Hello from goroutine")
+		go PrintMessage("Hello ")
+		time.Sleep(1 * time.Second * 1)
+	}
+	fmt.Println("Done")
+
+	func() {
+		fmt.Println("Good Morning")
+	}()
+}

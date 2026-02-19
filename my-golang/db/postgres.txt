@@ -1,0 +1,19 @@
+package db
+
+package main
+
+import "database/sql"
+
+func main() {
+    // Entry point for the server application 
+    dsn := "root:dreamfight@tcp(localhost:3306)"
+    db, err := sql.Open("mysql", dsn)
+    if err != nil {
+        panic(err)
+    } else {
+        println("Database connection established")
+    }
+    defer db.Close()
+
+}
+_ "github.com/go-sql-driver/mysql"

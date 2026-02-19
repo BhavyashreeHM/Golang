@@ -1,0 +1,23 @@
+package main
+
+import "fmt"
+
+type user struct {
+	name       string
+	occupation string
+}
+
+func main() {
+	user1 := user{name: "Bhavya", occupation: "Unemployee"}
+
+	ch := make(chan user)
+
+	go who(ch, user1)
+
+	receivedUser := <-ch
+	fmt.Printf("Name: %s, Occupation: %s", receivedUser.name, receivedUser.occupation)
+
+}
+func who(ch chan user, u user) {
+	ch <- u
+}

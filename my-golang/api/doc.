@@ -1,0 +1,18 @@
+package main
+
+import "fmt" 
+
+func main() {
+    projects := []string{"A", "B", "C", "D"}
+
+    i := 1 // remove "B"
+
+    projects = append(projects[:i], projects[i+1:]...)
+
+    fmt.Println(projects)
+}
+
+“In Go, deleting an element from a slice is done by appending 
+the elements before the index with 
+the elements after the index using slice 
+expressions and variadic append.”

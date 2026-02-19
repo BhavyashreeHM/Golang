@@ -1,0 +1,25 @@
+{
+    "name": "Bhavya",
+    "age": 25,
+    "city": "New York",
+    "hobbies": ["coding", "traveling", "cooking"],
+    "education": {
+        "degree": "Bachelor's in Computer Science",
+        "university": "XYZ University",
+        "graduation_year": 2020,
+        "courses": ["Data Structures", "Algorithms", "Operating Systems"]
+    },
+    "work_experience": [
+        {
+            "company": "ABC Tech",
+            "position": "Software Engineer",
+            "duration": "2 years",
+            "responsibilities": ["Developing web applications", "Collaborating with cross-functional teams", "Participating in code reviews"]
+        },
+        {
+            "company": "DEF Solutions",
+            "position": "Intern",
+            "duration": "6 months",             
+            "responsibilities": ["Assisting in software development", "Testing and debugging applications", "Learning new technologies"]
+        }] 
+}   

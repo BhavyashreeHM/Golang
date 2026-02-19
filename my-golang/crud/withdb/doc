@@ -1,0 +1,34 @@
+CREATE DATABASE productdb;
+
+USE productdb;
+
+CREATE TABLE products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    description TEXT
+);
+
+insert into products (name, price, description) values
+('Sample Product 1', 19.99, 'This is a sample product description.'),
+('Sample Product 2', 29.99, 'This is another sample product description.');
+
+
+CREATE DATABASE productdb;
+
+[[CREATE USER 'appuser'@'localhost' IDENTIFIED BY 'yourpassword';
+GRANT ALL PRIVILEGES ON productdb.* TO 'appuser'@'localhost';
+FLUSH PRIVILEGES;
+
+
+to see table data : describe (table name)   
+
+
+-- Make sure the database exists
+CREATE DATABASE IF NOT EXISTS school;
+
+-- Grant privileges to appuser
+GRANT ALL PRIVILEGES ON school.* TO 'appuser'@'localhost' IDENTIFIED BY 'yourpassword';
+
+-- Apply changes
+FLUSH PRIVILEGES;
